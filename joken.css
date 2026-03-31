@@ -1,0 +1,62 @@
+
+
+@media screen {
+    
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    background: url("https://i.pinimg.com/originals/1c/8b/0e/1c8b0e5a9d2f3a7c9e5b4c6e5f8a9b.jpg") no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+
+
+}
+.container{
+    background: rgba(240, 233, 233, 0.019);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+h1{
+    font-size: 50px;
+    color: #3bc244;
+    margin-bottom: 20px;
+    
+}
+button{
+    font-size: 50px;
+    cursor: pointer;
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(59, 194, 68, 0.8);
+    transition: opacity 0.3s ease;
+}
+#pontuacao{
+    color: #3bc244;
+    font-size: 30px;
+
+}
+#pontuacao-computador{
+    color: #de5708;
+    font-size: 30px;
+}
+p{
+    font-size: 25px;
+    color: black
+}
+}

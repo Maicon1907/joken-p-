@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="joken.css">
+    <title>JOKEN Pô</title>
+</head>
+<body>
+    <divclass="container">
+        <h1>JOKEN PÔ</h1>
+        <p>Escolha sua jogada:</p>
+       <div class="butt"> 
+        <button onclick="jogar('pedra')">&#x1F44A</button>
+        <button onclick="jogar('papel')">&#x270B</button>
+        <button  onclick="jogar('tesoura')">&#x270C</button>
+        </div>
+        <p>Sua pontuação: <span id="pontuacao">0</span></p>
+        <p>Pontuação do computador: <span id="pontuacao-computador">0</span></p>
+        <p id="resultado"></p>
+
+        <script>
+            function jogar(escolhaUsuario) {
+                const opcoes = ['pedra', 'papel', 'tesoura'];
+                const escolhaComputador = opcoes[Math.floor(Math.random() * opcoes.length)];
+
+                let resultado = '';
+
+                if (escolhaUsuario === escolhaComputador) {
+                    resultado = 'EMPATE!';
+                } else if (
+                    (escolhaUsuario === 'pedra' && escolhaComputador === 'tesoura') ||
+                    (escolhaUsuario === 'papel' && escolhaComputador === 'pedra') ||
+                    (escolhaUsuario === 'tesoura' && escolhaComputador === 'papel')
+                ) {
+                    resultado = 'VOCÊ VENCEU!';
+                } else {
+                    resultado = 'VOCÊ PERDEU!';
+                }
+
+                document.getElementById('resultado').innerText = `Você escolheu: ${escolhaUsuario}.
+                 O computador escolheu: ${escolhaComputador}.
+                  ${resultado}`;
+                  const pontuacaoUsuario = document.querySelector('#pontuacao');
+                  const pontuacaoComputador = document.querySelector('#pontuacao-computador');
+                      
+                  
+                if (resultado === 'VOCÊ VENCEU!') {
+                    pontuacaoUsuario.innerText = parseInt(pontuacaoUsuario.innerText) + 1;
+                } else if (resultado === 'VOCÊ PERDEU!') {
+                    pontuacaoComputador.innerText = parseInt(pontuacaoComputador.innerText) + 1;
+                }
+
+            }
+        </script>
+
+    </divclass>
+    
+</body>
+</html>
